@@ -1,7 +1,14 @@
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { PiSignOutBold } from "react-icons/pi";
+import { FaRegUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   return (
@@ -12,16 +19,30 @@ export function Navbar() {
           <h1 className="text-xl font-bold truncate">CollabBoard</h1>
         </div>
         <div className="flex flex-row items-center gap-2">
-        <div className="flex items-center gap-2 shrink-0">
-          <ThemeToggle />
-        </div>
-         <div className="flex items-center gap-2 shrink-0">
-            <Link to="/signin" className="mr-2">
-              <PiSignOutBold size={24} className="cursor-pointer" />
-            </Link>
-        </div>
+          <div className="flex items-center gap-2 shrink-0">
+            <ThemeToggle />
+          </div>
+          <div className="flex items-center gap-2 shrink-0">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <FaRegUser size={20} />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuItem>
+                  <Link to="#">
+                    <span className="text-black dark:text-white">Profile</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <Link to="/signin"><span className="text-black dark:text-white">Sign Out</span></Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </div>
     </header>
-  )
+  );
 }

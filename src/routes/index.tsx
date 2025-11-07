@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import Signin from "../pages/auth/Signin";
 import Signup from "../pages/auth/Signup";
 import ForgetPassword from "../pages/auth/ForgetPassword";
+import ProjectOverview from "../pages/project/ProjectOverview";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -27,6 +28,14 @@ const AppRoutes: React.FC = () => {
           </Layout>
         }
       />
+        <Route
+        path="/project-overview"
+        element={
+          <Layout>
+            <ProjectOverview />
+          </Layout>
+        }
+        />
 
       {/* Auth routes without sidebar and navbar */}
       <Route

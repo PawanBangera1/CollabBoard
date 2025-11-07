@@ -9,14 +9,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { Link } from "react-router-dom";
 
 const Signin = () => {
   return (
     <>
       <div className="absolute top-4 right-4">
-        <ThemeToggle />
       </div>
       <Card>
         <CardHeader className="space-y-1">
@@ -28,11 +26,16 @@ const Signin = () => {
         <CardContent className="grid gap-4">
           <div className="grid gap-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="m@example.com" />
+            <Input id="email" type="email" required placeholder="m@example.com" />
           </div>
           <div className="grid gap-2">
             <Label htmlFor="password">Password</Label>
-            <Input id="password" type="password" />
+            <Input id="password" required type="password" />
+          </div>
+          <div className="text-end text-sm">
+            <a href="/forgot-password" className="underline">
+              Forgot your password?
+            </a>
           </div>
         </CardContent>
         <CardFooter className="flex flex-col gap-4">
@@ -43,11 +46,6 @@ const Signin = () => {
             Don't have an account?{" "}
             <a href="/signup" className="underline">
               Sign up
-            </a>
-          </div>
-          <div className="text-center text-sm">
-            <a href="/forgot-password" className="underline">
-              Forgot your password?
             </a>
           </div>
         </CardFooter>

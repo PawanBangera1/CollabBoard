@@ -9,13 +9,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 const ForgetPassword = () => {
   return (
     <>
       <div className="absolute top-4 right-4">
-        <ThemeToggle />
       </div>
       <Card>
         <CardHeader className="space-y-1">
