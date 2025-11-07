@@ -16,7 +16,6 @@ export function Navbar() {
       <SidebarTrigger className="-ml-1 h-8 w-8" />
       <div className="flex flex-1 items-center justify-between overflow-hidden">
         <div className="flex items-center gap-2 min-w-0">
-          <h1 className="text-xl font-bold truncate">CollabBoard</h1>
         </div>
         <div className="flex flex-row items-center gap-2">
           <div className="flex items-center gap-2 shrink-0">
