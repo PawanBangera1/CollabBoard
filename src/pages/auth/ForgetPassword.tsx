@@ -13,14 +13,9 @@ import {
 const ForgetPassword = () => {
   return (
     <>
-      <div className="absolute top-4 right-4">
-      </div>
-      <Card>
+      <Card className="w-80">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl">Reset password</CardTitle>
-          <CardDescription>
-            Enter your email address and we will send you a reset link
-          </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
           <div className="grid gap-2">

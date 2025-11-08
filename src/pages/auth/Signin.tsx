@@ -27,14 +27,9 @@ const Signin = () => {
   }
   return (
     <>
-      <div className="absolute top-4 right-4">
-      </div>
-      <Card>
+      <Card className="w-80">
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl">Sign in</CardTitle>
-          <CardDescription>
-            Enter your email below to sign in to your account
-          </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
           <div className="grid gap-2">
@@ -55,7 +50,7 @@ const Signin = () => {
             <Button className="w-full" onClick={handleSubmit}>Sign In</Button>
           <div className="text-center text-sm">
             Don't have an account?{" "}
-            <a href="/signup" className="underline">
+            <a href="/signup" className="underline text-red">
               Sign up
             </a>
           </div>
