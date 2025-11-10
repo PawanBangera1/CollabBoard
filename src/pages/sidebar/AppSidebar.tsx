@@ -74,7 +74,7 @@ export function AppSidebar() {
             <SidebarMenu>
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild isActive>
+                  <SidebarMenuButton asChild>
                     <a href={item.url}>
                       {(() => {
                         const Icon = item.icon;

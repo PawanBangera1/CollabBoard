@@ -6,6 +6,7 @@ import Signup from "../pages/auth/Signup";
 import ForgetPassword from "../pages/auth/ForgetPassword";
 import ProjectOverview from "../pages/project/ProjectOverview";
 import TaskOverview from "../pages/task/TaskOverview";
+import ProjectDetailedOverview from "@/pages/project/ProjectDetailedOverview";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -33,6 +34,15 @@ const AppRoutes: React.FC = () => {
         element={
           <Layout>
             <TaskOverview />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/project-detailed-overview/:id"
+        element={
+          <Layout>
+            <ProjectDetailedOverview />
           </Layout>
         }
       />
