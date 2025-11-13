@@ -1,17 +1,9 @@
 "use client";
 
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
+import { ArrowUpDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { TbEye } from "react-icons/tb";
 
 import DataTable from "@/components/ui/data-table";
@@ -165,7 +157,7 @@ export const columns = [
     id: "actions",
     header: () => <div className="text-right">Actions</div>,
     enableHiding: false,
-    cell: ({ row }: any) => {
+    cell: () => {
       return (
         <div className="flex items-center justify-center">
           <TbEye size={18} className="ml-auto text-gray-600 cursor-pointer" />
@@ -177,12 +169,13 @@ export const columns = [
 
 export function TaskOverview() {
   return (
-   <div className="p-4 sm:p-6">
+    <div className="p-4 sm:p-6">
       <h2 className="text-2xl font-bold mb-4">Task Overview</h2>
       <div className="mb-4 ">
-      <DataTable columns={columns as any} data={data}/>
+        <DataTable columns={columns as any} data={data} />
       </div>
-    </div>);
+    </div>
+  );
 }
 
 export default TaskOverview;
