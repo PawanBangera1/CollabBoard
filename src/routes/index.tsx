@@ -1,11 +1,12 @@
-import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Layout } from "../components/layout";
 import { AuthLayout } from "../components/auth-layout";
-import Home from "../pages/Home";
 import Signin from "../pages/auth/Signin";
 import Signup from "../pages/auth/Signup";
 import ForgetPassword from "../pages/auth/ForgetPassword";
+import ProjectOverview from "../pages/project/ProjectOverview";
+import TaskOverview from "../pages/task/TaskOverview";
+import ProjectDetailedOverview from "@/pages/project/ProjectDetailedOverview";
 
 const AppRoutes: React.FC = () => {
   return (
@@ -14,16 +15,34 @@ const AppRoutes: React.FC = () => {
       <Route
         path="/"
         element={
-          <Layout>
-            <Home />
-          </Layout>
+          <AuthLayout>
+            <Signin />
+          </AuthLayout>
         }
       />
       <Route
-        path="/home"
+        path="/project-overview"
         element={
           <Layout>
-            <Home />
+            <ProjectOverview />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/task-overview"
+        element={
+          <Layout>
+            <TaskOverview />
+          </Layout>
+        }
+      />
+
+      <Route
+        path="/project-detailed-overview/:id"
+        element={
+          <Layout>
+            <ProjectDetailedOverview />
           </Layout>
         }
       />
@@ -54,7 +73,6 @@ const AppRoutes: React.FC = () => {
         }
       />
 
-      {/* Catch all redirect */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
